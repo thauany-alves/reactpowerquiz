@@ -18,7 +18,7 @@ const Widget = styled.div`
   }
   p {
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 1;
   }
 `;
@@ -29,7 +29,7 @@ Widget.Header = styled.header`
   align-items: center;
   padding: 18px 32px;
   background-color: ${({ theme }) => theme.colors.primary};
-  color: ${({ theme }) => theme.colors.mainBg};
+  color: ${({ theme }) => theme.colors.contrastText};
 
   
   * {
@@ -39,7 +39,7 @@ Widget.Header = styled.header`
 
 Widget.Content = styled.div`
   padding: 24px 32px 32px 32px;
-  color: ${({ theme }) => theme.colors.primaryText};
+  color: ${({ theme }) => theme.colors.contrastText};
   & > *:first-child {
     margin-top: 0;
   }

@@ -1,17 +1,20 @@
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useRouter } from 'next/router';
 import db from '../db.json';
 import QuizBackground from '../src/components/QuizBackground' 
+import QuizLogo from '../src/components/QuizLogo' 
 import Widget from '../src/components/Widget' 
 import GitHubCorner from '../src/components/GitHubCorner' 
 import Footer from '../src/components/Footer' 
 
 
-const BackgroundImage = styled.div`
-  background-image: url(${db.bg});
-  flex: 1;
-  background-size: cover;
-  background-position: center;
-`;
+// const BackgroundImage = styled.div`
+//   background-image: url(${db.bg});
+//   flex: 1;
+//   background-size: cover;
+//   background-position: center;
+// `;
 
 export const QuizContainer = styled.div`
   width: 100%;
@@ -25,15 +28,35 @@ export const QuizContainer = styled.div`
 `;
 
 export default function Home() {
+  const router = useRouter();
+  let [name, setName] = React.useState('');
+
+  
   return (
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
+        <QuizLogo />
         <Widget>
           <Widget.Header>
             <h1>{db.title}</h1>
           </Widget.Header>
           <Widget.Content>
             <p>{db.description}</p>
+            <form onSubmit = { function (e) {
+                e.preventDefault();
+                router.push(`/quiz?name=${name}`);
+                console.log('Fazendo uma submissão por meio do react');
+              }}
+            >
+              <input 
+                placeholder = "Seu nome"
+                onChange = { function (event) {
+                  setName(event.target.value);
+                }} />
+              <button type="submit" disabled={name.length === 0}>
+                Jogar 
+              </button>
+            </form>
           </Widget.Content>
         </Widget>
 
