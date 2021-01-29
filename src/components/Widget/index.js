@@ -50,6 +50,9 @@ Widget.Content = styled.div`
     list-style: none;
     padding: 0;
   }
+  li{
+    margin-bottom: 6px;
+  }
 `;
 
 Widget.Topic = styled.a`
