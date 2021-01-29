@@ -24,6 +24,17 @@
            "background: linear-gradient(#e66465, #9198e5);",
            "background: gradient(#e66465, #9198e5);"
         ]
+      },
+      {
+        "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+        "title": "Como comentar bloco de código em JSX (React)?",
+        "description": "Faz tempo em haha",
+        "answer": 2,
+        "alternatives": [
+           "Utilizando {{Comentário}}",
+           "Utilizando //Comentário",
+           "Utilizando {/* Comentário */}"
+        ]
       }
     ],
     "external": [
